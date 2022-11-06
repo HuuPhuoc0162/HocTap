@@ -79,6 +79,6 @@ public class SanPham {
     }
 
     public void Xuat() {
-        System.out.printf("%-25d%-25s%-25d%-25%-25s\n",masp,tensp,soluong,giasp,thongtinsp);
+        System.out.printf("%-25d%-25s%-25d%-25f%-25s\n",masp,tensp,soluong,giasp,thongtinsp);
     }
 }
