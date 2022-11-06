@@ -1,23 +1,23 @@
 import java.util.Scanner;
 
 public class SanPham {
-    private int masp;
+    private String masp;
     private String tensp;
-    private int soluong;
-    private float giasp;
+    private String soluong;
+    private String giasp;
     private String thongtinsp;
 
     Scanner sc = new Scanner(System.in);
 
     public SanPham() {
-        this.masp = 0;
+        this.masp = null;
         this.tensp = null;
-        this.soluong = 0;
-        this.giasp = 0;
+        this.soluong = null;
+        this.giasp = null;
         this.thongtinsp = null;
     }
 
-    public SanPham(int masp, String tensp, int soluong, Float giasp, String thongtinsp) {
+    public SanPham(String masp, String tensp, String soluong, String giasp, String thongtinsp) {
         this.masp = masp;
         this.tensp = tensp;
         this.soluong = soluong;
@@ -25,11 +25,11 @@ public class SanPham {
         this.thongtinsp = thongtinsp;
     }
 
-    public int getMasp() {
+    public String getMasp() {
         return masp;
     }
 
-    public void setMasp(int masp) {
+    public void setMasp(String masp) {
         this.masp = masp;
     }
 
@@ -41,19 +41,19 @@ public class SanPham {
         this.tensp = tensp;
     }
 
-    public int getSoluong() {
+    public String getSoluong() {
         return soluong;
     }
 
-    public void setSoluong(int soluong) {
+    public void setSoluong(String soluong) {
         this.soluong = soluong;
     }
 
-    public double getGiasp() {
+    public String getGiasp() {
         return giasp;
     }
 
-    public void setGiasp(Float giasp) {
+    public void setGiasp(String giasp) {
         this.giasp = giasp;
     }
 
@@ -67,18 +67,18 @@ public class SanPham {
 
     public void Nhap() {
         System.out.println("Moi ban nhap vao ma sp: ");
-        masp = Integer.parseInt(sc.nextLine());
+        masp = sc.nextLine();
         System.out.println("Moi ban nhap vao ten SP: ");
         tensp = sc.nextLine();
         System.out.println("Moi ban nhap vao so luong SP: ");
-        soluong = Integer.parseInt(sc.nextLine());
+        soluong = sc.nextLine();
         System.out.println("Moi ban nhap vao gia SP: ");
-        giasp = Float.parseFloat(sc.nextLine());
+        giasp = sc.nextLine();
         System.out.println("Moi ban nhap vao thong tin SP: ");
         thongtinsp = sc.nextLine();
     }
 
     public void Xuat() {
-        System.out.printf("%-25d%-25s%-25d%-25f%-25s\n",masp,tensp,soluong,giasp,thongtinsp);
+        System.out.printf("%-25s%-25s%-25s%-25s%-25s\n", masp, tensp, soluong, giasp, thongtinsp);
     }
 }
