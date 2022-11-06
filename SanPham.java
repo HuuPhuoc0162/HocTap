@@ -4,7 +4,7 @@ public class SanPham {
     private int masp;
     private String tensp;
     private int soluong;
-    private double giasp;
+    private float giasp;
     private String thongtinsp;
 
     Scanner sc = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class SanPham {
         this.thongtinsp = null;
     }
 
-    public SanPham(int masp, String tensp, int soluong, double giasp, String thongtinsp) {
+    public SanPham(int masp, String tensp, int soluong, Float giasp, String thongtinsp) {
         this.masp = masp;
         this.tensp = tensp;
         this.soluong = soluong;
@@ -53,7 +53,7 @@ public class SanPham {
         return giasp;
     }
 
-    public void setGiasp(double giasp) {
+    public void setGiasp(Float giasp) {
         this.giasp = giasp;
     }
 
@@ -73,12 +73,12 @@ public class SanPham {
         System.out.println("Moi ban nhap vao so luong SP: ");
         soluong = Integer.parseInt(sc.nextLine());
         System.out.println("Moi ban nhap vao gia SP: ");
-        giasp = Double.parseDouble(sc.nextLine());
+        giasp = Float.parseFloat(sc.nextLine());
         System.out.println("Moi ban nhap vao thong tin SP: ");
         thongtinsp = sc.nextLine();
     }
 
     public void Xuat() {
-        System.out.printf("%-25d%-25s%-25d%-25f%-25s\n",masp,tensp,soluong,giasp,thongtinsp);
+        System.out.printf("%-25d%-25s%-25d%-25%-25s\n",masp,tensp,soluong,giasp,thongtinsp);
     }
 }
