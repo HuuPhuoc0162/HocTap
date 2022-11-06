@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class SanPham {
+    private int masp;
     private String tensp;
     private int soluong;
     private double giasp;
@@ -9,14 +10,27 @@ public class SanPham {
     Scanner sc = new Scanner(System.in);
 
     public SanPham() {
-
+        this.masp = 0;
+        this.tensp = null;
+        this.soluong = 0;
+        this.giasp = 0;
+        this.thongtinsp = null;
     }
 
-    public SanPham(String tensp, int soluong, double giasp, String thongtinsp) {
+    public SanPham(int masp, String tensp, int soluong, double giasp, String thongtinsp) {
+        this.masp = masp;
         this.tensp = tensp;
         this.soluong = soluong;
         this.giasp = giasp;
         this.thongtinsp = thongtinsp;
+    }
+
+    public int getMasp() {
+        return masp;
+    }
+
+    public void setMasp(int masp) {
+        this.masp = masp;
     }
 
     public String getTensp() {
@@ -52,6 +66,8 @@ public class SanPham {
     }
 
     public void Nhap() {
+        System.out.println("Moi ban nhap vao ma sp: ");
+        masp = Integer.parseInt(sc.nextLine());
         System.out.println("Moi ban nhap vao ten SP: ");
         tensp = sc.nextLine();
         System.out.println("Moi ban nhap vao so luong SP: ");
@@ -63,7 +79,6 @@ public class SanPham {
     }
 
     public void Xuat() {
-        System.out.printf("[Ten]:%-20s [So luong]:%-20d [Gia]:%-20f [Thong tin]:%-20s\n", tensp, soluong, giasp,
-                thongtinsp);
+        System.out.printf("%-25d%-25s%-25d%-25f%-25s\n",masp,tensp,soluong,giasp,thongtinsp);
     }
 }
