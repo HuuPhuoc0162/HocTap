@@ -1,23 +1,23 @@
 import java.util.Scanner;
 
 public class SanPham {
-    private String masp;
+    private int masp;
     private String tensp;
-    private String soluong;
-    private String giasp;
+    private int soluong;
+    private double giasp;
     private String thongtinsp;
 
     Scanner sc = new Scanner(System.in);
 
     public SanPham() {
-        this.masp = null;
+        this.masp = 0;
         this.tensp = null;
-        this.soluong = null;
-        this.giasp = null;
+        this.soluong = 0;
+        this.giasp = 0;
         this.thongtinsp = null;
     }
 
-    public SanPham(String masp, String tensp, String soluong, String giasp, String thongtinsp) {
+    public SanPham(int masp, String tensp, int soluong, double giasp, String thongtinsp) {
         this.masp = masp;
         this.tensp = tensp;
         this.soluong = soluong;
@@ -25,11 +25,11 @@ public class SanPham {
         this.thongtinsp = thongtinsp;
     }
 
-    public String getMasp() {
+    public int getMasp() {
         return masp;
     }
 
-    public void setMasp(String masp) {
+    public void setMasp(int masp) {
         this.masp = masp;
     }
 
@@ -41,19 +41,19 @@ public class SanPham {
         this.tensp = tensp;
     }
 
-    public String getSoluong() {
+    public int getSluong() {
         return soluong;
     }
 
-    public void setSoluong(String soluong) {
+    public void setSluong(int soluong) {
         this.soluong = soluong;
     }
 
-    public String getGiasp() {
+    public double getGiasp() {
         return giasp;
     }
 
-    public void setGiasp(String giasp) {
+    public void setGiasp(double giasp) {
         this.giasp = giasp;
     }
 
@@ -65,20 +65,19 @@ public class SanPham {
         this.thongtinsp = thongtinsp;
     }
 
-    public void Nhap() {
+    public void Nhap(){
         System.out.println("Moi ban nhap vao ma sp: ");
-        masp = sc.nextLine();
-        System.out.println("Moi ban nhap vao ten SP: ");
+        masp = Integer.parseInt(sc.nextLine());
+        System.out.println("Moi ban nhap vao ten sp: ");
         tensp = sc.nextLine();
-        System.out.println("Moi ban nhap vao so luong SP: ");
-        soluong = sc.nextLine();
-        System.out.println("Moi ban nhap vao gia SP: ");
-        giasp = sc.nextLine();
-        System.out.println("Moi ban nhap vao thong tin SP: ");
+        System.out.println("Moi ban nhap vao so luong sp: ");
+        soluong = Integer.parseInt(sc.nextLine());
+        System.out.println("Moi ban nhap vao gia sp: ");
+        giasp = Double.parseDouble(sc.nextLine());
+        System.out.println("Moi ban nhap vao thong tin sp: ");
         thongtinsp = sc.nextLine();
     }
-
     public void Xuat() {
-        System.out.printf("%-25s%-25s%-25s%-25s%-25s\n", masp, tensp, soluong, giasp, thongtinsp);
+        System.out.printf("  %-25d%-25s%-25d%-25.3f%-25s\n", masp, tensp, soluong, giasp, thongtinsp);
     }
 }
