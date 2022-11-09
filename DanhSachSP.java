@@ -10,19 +10,24 @@ public class DanhSachSP implements ChucNangDS {
         n = 0;
         dssp = null;
     }
+    
 
+    // nhập vào danh sách sản phẩm ban đầu 
     void nhapds() {
         System.out.println("Nhap vao so luong san pham can them: ");
         n = Integer.parseInt(sc.nextLine());
         dssp = new SanPham[n];
         for (int i = 0; i < n; i++) {
-            System.out.println("Nhap vao san pham thu " + (i + 1));
+            System.out.println("[==========Moi ban nhap vao san pham thu " + (i + 1) + "==========]");
             SanPham sp = new SanPham();
             sp.Nhap();
             dssp[i] = sp;
+            System.out.println();
         }
     }
 
+
+    // hàm thêm sản phẩm  
     public void them() {
         System.out.println("Nhap vao thong tin SP ban can them: ");
         SanPham addsp = new SanPham();
@@ -32,11 +37,13 @@ public class DanhSachSP implements ChucNangDS {
         n++;
     }
 
+
+    // hàm tìm kiếm sản phẩm 
     public void timKiemTheo_MaSP() {
         System.out.println("Nhap vao ma SP ban muon tim: ");
-        String masp = sc.nextLine();
+        int masp = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < dssp.length; i++) {
-            if (dssp[i].getMasp().equalsIgnoreCase(masp)) {
+            if(dssp[i].getMasp() == masp){
                 dssp[i].Xuat();
             }
         }
@@ -54,9 +61,9 @@ public class DanhSachSP implements ChucNangDS {
 
     public void timKiemTheo_GiaSP() {
         System.out.println("Nhap vao gia SP ban muon tim: ");
-        String giasp = sc.nextLine();
+        double giasp = Double.parseDouble(sc.nextLine());
         for (int i = 0; i < dssp.length; i++) {
-            if (dssp[i].getGiasp().equalsIgnoreCase(giasp)) {
+            if (dssp[i].getGiasp() == giasp) {
                 dssp[i].Xuat();
             }
         }
@@ -88,14 +95,15 @@ public class DanhSachSP implements ChucNangDS {
         }while(luachon != 4);
     }
 
+
+    // hàm sửa đổi sản phẩm 
     public void suaTheo_GiaSP() {
         System.out.println("nhap vao ten san pham ban muon sua gia: ");
         String tensp = sc.nextLine();
         System.out.println("Nhap vao gia ban muon sua: ");
-        String giasp = sc.nextLine();
+        Double giasp = Double.parseDouble(sc.nextLine());
         for (int i = 0; i < dssp.length; i++) {
             if (dssp[i].getTensp().equalsIgnoreCase(tensp)) {
-                dssp[i].Xuat();
                 dssp[i].setGiasp(giasp);
                 dssp[i].Xuat();
             }
@@ -105,11 +113,10 @@ public class DanhSachSP implements ChucNangDS {
     public void suaTheo_ThongTinSP(){
         System.out.println("nhap vao ten san pham ban muon sua gia: ");
         String tensp = sc.nextLine();
-        System.out.println("Nhap vao gia ban muon sua: ");
+        System.out.println("Nhap vao thong tin ban muon sua: ");
         String thongtinsp = sc.nextLine();
         for(int i=0;i<dssp.length;i++){
             if(dssp[i].getTensp().equalsIgnoreCase(tensp)){
-                dssp[i].Xuat();
                 dssp[i].setThongtinsp(thongtinsp);
                 dssp[i].Xuat();
             }
@@ -118,11 +125,13 @@ public class DanhSachSP implements ChucNangDS {
 
     public void sua() {
         int luachon;
-        System.out.println("1.Sua gia SP");
-        System.out.println("1.Sua thong tin SP");
-        System.out.println("3.Thoat!");
         do {
-            System.out.println("nhap vao lua chon cua ban: ");
+            System.out.println("**********Thay Doi**********");
+            System.out.println("1.Sua gia SP");
+            System.out.println("2.Sua thong tin SP");
+            System.out.println("3.Thoat!");
+            System.out.println("****************************");
+            System.out.println("Nhap vao lua chon cua ban: ");
             luachon = Integer.parseInt(sc.nextLine()); 
             switch (luachon) {
                 case 1:
@@ -139,10 +148,49 @@ public class DanhSachSP implements ChucNangDS {
     }
 
     public void hienThi() {
-        System.out.println("Danh sach san pham vua nhap");
-        System.out.printf("%-25s%-25s%-25s%-25s%-25s\n", "[MaSP]", "[TenSP]", "[SoluongSP]", "[GiaSP]", "[ThongtinSP]");
+        System.out.println("[=======================================================MENU=======================================================]");
+        System.out.println();
+        System.out.printf("  %-25d%-25s%-25d%-25.3f%-25s\n", "[MaSP]", "[TenSP]", "[SoluongSP]", "[GiaSP]", "[ThongtinSP]");
         for (int i = 0; i < dssp.length; i++) {
             dssp[i].Xuat();
         }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DanhSachSP ds = new DanhSachSP();
+        ds.nhapds();
+        ds.hienThi();
+        int luachon;
+        // System.out.println("1.Them san pham vao danh sach");
+        // System.out.println("2.Sua doi danh sach san pham");
+        // System.out.println("3.Tim san pham trong danh sach");
+        // System.out.println("4.Xuat ra danh sach san pham sau khi chinh sua");
+        do {
+            System.out.println("*********[LUA CHON]**********");
+            System.out.println("1.Them san pham vao danh sach");
+            System.out.println("2.Sua doi danh sach san pham");
+            System.out.println("3.Tim san pham trong danh sach");
+            System.out.println("4.Thoat!");
+            System.out.println("******************************");
+            System.out.println("Nhap vao lua chon cua ban: ");
+            luachon = Integer.parseInt(sc.nextLine());
+            switch (luachon) {
+                case 1:
+                    ds.them();
+                    break;
+                case 2:
+                    ds.sua();
+                    break;
+                case 3:
+                    ds.timKiem();
+                    break;
+                default:
+                    System.out.println("Moi ban nhap lai lua chon cua minh !");
+                    break;
+            }
+        } while (luachon != 4);
+        ds.hienThi();
     }
 }
