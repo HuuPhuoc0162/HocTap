@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BaoHanh {
+public class BaoHanh extends SanPham {
     private int mabh;
     private String thoigianbh;
     private String thongtinbh;
@@ -8,12 +8,21 @@ public class BaoHanh {
     Scanner sc = new Scanner(System.in);
 
     public BaoHanh() {
+        super();
         this.mabh = 0;
         this.thoigianbh = null;
         this.thongtinbh = null;
     }
 
     public BaoHanh(int mabh, String thoigianbh, String thongtinbh) {
+        this.mabh = mabh;
+        this.thoigianbh = thoigianbh;
+        this.thongtinbh = thongtinbh;
+    }
+
+    public BaoHanh(int masp, String tensp, int soluong, double giasp, String thongtinsp, int mabh, String thoigianbh,
+            String thongtinbh) {
+        super(masp, tensp, soluong, giasp, thongtinsp);
         this.mabh = mabh;
         this.thoigianbh = thoigianbh;
         this.thongtinbh = thongtinbh;
@@ -27,7 +36,7 @@ public class BaoHanh {
         this.mabh = mabh;
     }
 
-    public String getThoigian() {
+    public String getThoigianbh() {
         return thoigianbh;
     }
 
