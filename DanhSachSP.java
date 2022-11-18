@@ -11,6 +11,14 @@ public class DanhSachSP implements ChucNangDS {
         dssp = null;
     }
 
+    public SanPham[] getDssp() {
+        return dssp;
+    }
+
+    public void setDssp(SanPham[] dssp) {
+        this.dssp = dssp;
+    }
+
     // nhập vào danh sách sản phẩm ban đầu
     void nhapds() {
         System.out.println("Nhap vao so luong san pham ban muon nhap vao danh sach: ");
@@ -205,12 +213,13 @@ public class DanhSachSP implements ChucNangDS {
                 case 3:
                     ds.timKiem();
                     break;
-                case 4: 
+                case 4:
                     ds.xoa();
                     ds.hienThi();
                     break;
             }
         } while (luachon != 5);
         ds.hienThi();
+        sc.close();
     }
 }

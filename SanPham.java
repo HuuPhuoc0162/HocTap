@@ -65,7 +65,7 @@ public class SanPham {
         this.thongtinsp = thongtinsp;
     }
 
-    public void Nhap(){
+    public void Nhap() {
         System.out.println("Moi ban nhap vao ma sp: ");
         masp = Integer.parseInt(sc.nextLine());
         System.out.println("Moi ban nhap vao ten sp: ");
@@ -77,6 +77,7 @@ public class SanPham {
         System.out.println("Moi ban nhap vao thong tin sp: ");
         thongtinsp = sc.nextLine();
     }
+
     public void Xuat() {
         System.out.printf("  %-25d%-25s%-25d%-25.3f%-25s\n", masp, tensp, soluong, giasp, thongtinsp);
     }
