@@ -9,11 +9,11 @@ public class TaoTaiKhoan {
 
     Scanner sc = new Scanner(System.in);
     public TaoTaiKhoan() {
-        this.ten = "phuoc";
-        this.tuoi = "20";
-        this.email = "huuphuoc@123";
-        this.std = "012";
-        this.mk = "123";
+        this.ten = null;
+        this.tuoi = null;
+        this.email = null;
+        this.std = null;;
+        this.mk = null;;
     }
 
     public TaoTaiKhoan(String ten, String tuoi, String email, String std, String mk) {
@@ -78,9 +78,5 @@ public class TaoTaiKhoan {
     }
     public void xuat(){
         System.out.printf("%-25s%-25s%-25s%-25s%-25s\n",ten,tuoi,email,std,mk);
-    }
-    public static void main(String[] args) {
-        TaoTaiKhoan tk = new TaoTaiKhoan();
-        tk.xuat();
     }
 }
