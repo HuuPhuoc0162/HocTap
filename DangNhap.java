@@ -59,10 +59,12 @@ public class DangNhap {
     }
 
     public void ktra(){
+        System.out.println();
         for(int i=0;i<dstk.length;i++){
             if(dstk[i].getTen().equalsIgnoreCase(tenTaiKhoan) && dstk[i].getMk().equalsIgnoreCase(matKhau)){
                 System.out.println("Dang nhap thanh cong!");
                 System.out.println();
+                // van dung vao viec lien ket trong menu
             }else{
                 System.out.println("Dang nhap that bai, vui long kiem tra lai tai khoan va mat khau!");
                 System.out.println();
