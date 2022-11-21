@@ -1,8 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
-
 public class DanhSachSP implements ChucNangDS {
     private int n;
     SanPham dssp[];

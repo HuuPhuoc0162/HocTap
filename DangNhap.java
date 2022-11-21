@@ -43,7 +43,8 @@ public class DangNhap {
         // n = Integer.parseInt(sc.nextLine());
         dstk = new TaoTaiKhoan[n];
         for (int i = 0; i < n; i++) {
-            // System.out.println("[==========Moi ban nhap vao tai khoan thu " + (i + 1) + "==========]");
+            // System.out.println("[==========Moi ban nhap vao tai khoan thu " + (i + 1) +
+            // "==========]");
             TaoTaiKhoan ttk = new TaoTaiKhoan();
             ttk.nhap();
             dstk[i] = ttk;
@@ -58,21 +59,27 @@ public class DangNhap {
         matKhau = sc.nextLine();
     }
 
-    public void ktra(){
+    public void ktra() {
         System.out.println();
-        for(int i=0;i<dstk.length;i++){
-            if(dstk[i].getTen().equalsIgnoreCase(tenTaiKhoan) && dstk[i].getMk().equalsIgnoreCase(matKhau)){
+        for (int i = 0; i < dstk.length; i++) {
+            if (dstk[i].getTen().equalsIgnoreCase(tenTaiKhoan) && dstk[i].getMk().equalsIgnoreCase(matKhau)) {
                 System.out.println("Dang nhap thanh cong!");
                 System.out.println();
                 // van dung vao viec lien ket trong menu
-            }else{
+            } else if (dstk[i].getTen().equalsIgnoreCase(tenTaiKhoan) && !dstk[i].getMk().equalsIgnoreCase(matKhau)) {
                 System.out.println("Dang nhap that bai, vui long kiem tra lai tai khoan va mat khau!");
+                System.out.println();
+            } else if (!dstk[i].getTen().equalsIgnoreCase(tenTaiKhoan) && dstk[i].getMk().equalsIgnoreCase(matKhau)) {
+                System.out.println("Dang nhap that bai, vui long kiem tra lai tai khoan va mat khau!");
+                System.out.println();
+            } else {
+                System.out.println("Tai khoan khong ton tai!");
                 System.out.println();
             }
         }
     }
 
-    public void thaoTac(){
+    public void thaoTac() {
         int luachon;
         do {
             System.out.println("1.Tao tai khoan");
@@ -80,29 +87,30 @@ public class DangNhap {
             System.out.println("3.Thoat");
             System.out.println("Nhap vao lua chon cua ban: ");
             luachon = Integer.parseInt(sc.nextLine());
-            if(luachon > 0 && luachon < 3){
+            if (luachon > 0 && luachon < 3) {
                 switch (luachon) {
                     case 1:
                         nhapDS();
                         break;
                     case 2:
                         nhapTK();
-                        if(dstk == null){
+                        if (dstk == null) {
                             System.out.println();
                             System.out.println("Tai khoan khong ton tai!");
                             System.out.println();
                             thaoTac();
                             nhapDS();
-                        }else if(dstk != null){
+                        } else if (dstk != null) {
                             ktra();
                         }
                         break;
                 }
-            }else{
+            } else {
                 System.out.println("Nhap lai lua chon cua ban!");
             }
-        } while (luachon !=3 );
+        } while (luachon != 3);
     }
+
     public static void main(String[] args) {
         DangNhap dn = new DangNhap();
         dn.thaoTac();
