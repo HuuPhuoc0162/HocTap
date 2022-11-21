@@ -10,7 +10,7 @@ public class DangNhap {
     public DangNhap() {
         this.tenTaiKhoan = null;
         this.matKhau = null;
-        n = 0;
+        n = 1;
         dstk = null;
     }
 
@@ -39,11 +39,11 @@ public class DangNhap {
     }
 
     public void nhapDS() {
-        System.out.println("Nhap vao so luong tai khoan ban muon tao: ");
-        n = Integer.parseInt(sc.nextLine());
+        // System.out.println("Nhap vao so luong tai khoan ban muon tao: ");
+        // n = Integer.parseInt(sc.nextLine());
         dstk = new TaoTaiKhoan[n];
         for (int i = 0; i < n; i++) {
-            System.out.println("[==========Moi ban nhap vao tai khoan thu " + (i + 1) + "==========]");
+            // System.out.println("[==========Moi ban nhap vao tai khoan thu " + (i + 1) + "==========]");
             TaoTaiKhoan ttk = new TaoTaiKhoan();
             ttk.nhap();
             dstk[i] = ttk;
@@ -71,6 +71,7 @@ public class DangNhap {
             }
         }
     }
+
     public void thaoTac(){
         int luachon;
         do {
@@ -86,7 +87,15 @@ public class DangNhap {
                         break;
                     case 2:
                         nhapTK();
-                        ktra();
+                        if(dstk == null){
+                            System.out.println();
+                            System.out.println("Tai khoan khong ton tai!");
+                            System.out.println();
+                            thaoTac();
+                            nhapDS();
+                        }else if(dstk != null){
+                            ktra();
+                        }
                         break;
                 }
             }else{

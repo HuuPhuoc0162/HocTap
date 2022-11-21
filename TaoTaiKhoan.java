@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class TaoTaiKhoan {
-    private String ten = "huuphuoc";
-    private String tuoi = "20";
-    private String email = "huuphuoc@123";
-    private String std = "012";
-    private String mk = "123";
+    private String ten;
+    private String tuoi;
+    private String email;
+    private String std;
+    private String mk;
 
     Scanner sc = new Scanner(System.in);
     public TaoTaiKhoan() {

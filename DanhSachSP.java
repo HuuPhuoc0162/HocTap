@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class DanhSachSP implements ChucNangDS {
     private int n;
     SanPham dssp[];
@@ -108,6 +110,21 @@ public class DanhSachSP implements ChucNangDS {
         } while (luachon != 4);
     }
 
+    // public void timKiem(){
+    //     int luachon;
+    //     System.out.println("1.tim kiem theo gia SP");
+    //     System.out.println("2.tim kiem theo ma SP");
+    //     System.out.println("3.tim kiem theo ten SP");
+    //     System.out.println("Nhap vao lua chon cua ban: ");
+    //     luachon = Integer.parseInt(sc.nextLine());
+    //     if(luachon == 1){
+    //         timKiemTheo_GiaSP();
+    //     }else if(luachon == 2){
+    //         timKiemTheo_MaSP();
+    //     }else if(luachon == 3){
+    //         timKiemTheo_TenSP();
+    //     }
+    // }
     // hàm sửa đổi sản phẩm
     public void suaTheo_GiaSP() {
         System.out.println("nhap vao ten san pham ban muon sua gia: ");
